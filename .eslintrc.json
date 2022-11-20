@@ -1,8 +1,6 @@
 {
     "extends": "next/core-web-vitals",
-    "env": {
-        "es6": true,
-        "node": true,
-        "browser": true
-    }
+    "plugins": [
+        "styled-components-a11y"
+    ]
 }

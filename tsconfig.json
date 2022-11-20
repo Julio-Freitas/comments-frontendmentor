@@ -15,13 +15,16 @@
         "module": "esnext",
         "moduleResolution": "node",
         "resolveJsonModule": true,
-        "isolatedModules": false,
+        "isolatedModules": true,
         "jsx": "preserve",
         "incremental": true,
-        "baseUrl": ".",
+        "baseUrl": "./src",
         "paths": {
             "@/components/*": [
                 "components/*"
+            ],
+            "@styles": [
+                "styles/*"
             ]
         }
     },
@@ -33,5 +36,5 @@
     ],
     "exclude": [
         "node_modules"
-    ]
+    ],
 }
