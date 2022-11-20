@@ -1,4 +1,8 @@
 {
     "extends": "next/core-web-vitals",
-    "jest": true
+    "env": {
+        "es6": true,
+        "node": true,
+        "browser": true
+    }
 }
