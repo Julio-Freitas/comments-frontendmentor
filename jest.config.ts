@@ -35,6 +35,7 @@ module.exports = createJestConfig({
   globals: {
     'ts-jest': {
       isolatedModules: false,
+      tsConfig: './tsconfig.jest.json'
     },
   },
   ...customJestConfig,
