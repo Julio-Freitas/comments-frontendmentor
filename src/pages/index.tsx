@@ -1,7 +1,8 @@
-import Head from 'next/head'
-import HomeC from '@/components/Home'
+import Head from 'next/head';
+import HomeC from '@/components/Home';
 
 export default function Home() {
+  const a = null
   return (
     <div>
       <Head>
@@ -11,10 +12,8 @@ export default function Home() {
       </Head>
 
       <main>
-   
-     <HomeC />
+        <HomeC />
       </main>
-
     </div>
-  )
+  );
 }
