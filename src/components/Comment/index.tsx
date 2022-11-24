@@ -1,6 +1,7 @@
 import { Comment } from 'context/comments/types';
 
 import Image from 'next/image';
+import { useState } from 'react';
 import * as Style from './style';
 
 type HandleClickStore = {
@@ -16,11 +17,13 @@ interface CommentProps extends Comment {
   _handleCLickScore: (props: HandleClickStore) => void;
 }
 
+
 const Comment = ({
   replies,
   _handleCLickScore,
   ...propsFather
 }: CommentProps) => {
+  const [reply, setReply] = useState(false)
   const CommentChild = (props: CommentPropsChild) => (
     <Style.Container>
       <Style.Score>
@@ -61,21 +64,24 @@ const Comment = ({
             <p>{props.user.username}</p>
             <span className="createdAt">{props.createdAt}</span>
           </Style.Info>
-          <Style.ActionReply type="button">Reply</Style.ActionReply>
+          <Style.ActionReply type="button" onClick={()=> setReply(true)}>Reply</Style.ActionReply>
         </Style.Header>
         <Style.Description>{props.content}</Style.Description>
       </Style.Content>
+
     </Style.Container>
   );
 
   return (
     <Style.WrapperComment>
+
       <CommentChild
         {...propsFather}
         _handleCLick={(action) =>
           _handleCLickScore({ action, type: 'comment', id: propsFather.id })
         }
       />
+            {reply &&  <textarea></textarea>}
       <Style.ContainerReplys data-testid="reply">
         {replies?.map((replie) => (
           <CommentChild
@@ -92,6 +98,7 @@ const Comment = ({
           />
         ))}
       </Style.ContainerReplys>
+
     </Style.WrapperComment>
   );
 };

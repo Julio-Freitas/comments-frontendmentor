@@ -12,7 +12,7 @@ export default function Home() {
       </Head>
 
       <main>
-        com deploy novo
+ =
         {comments.map((comment, index) => (
           <Comment
             key={index + 'comments'}
