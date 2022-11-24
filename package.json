@@ -1,5 +1,5 @@
 {
-  "name": "planet",
+  "name": "comments",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -14,7 +14,8 @@
     "format": "prettier --write .",
     "prepare": "husky install",
     "commit": "cz",
-    "deploy": " "
+    "deploy": "npx vercel --token=${VERCEL_TOKEN}",
+    "deploy:prod": "yarn deploy --prod --confirm --no-clipboard"
   },
   "dependencies": {
     "@types/node": "18.11.9",
