@@ -15,11 +15,18 @@
     "incremental": true,
     "baseUrl": "./src",
     "paths": {
-      "@/components/*": ["components/*"],
-      "@styles": ["styles/*"]
+      "components": ["components/*"],
+      "styles": ["styles/*"],
+      "context": ["context/*"]
     },
     "isolatedModules": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "jest.config.ts", "next.config.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "jest.config.ts",
+    "next.config.js"
+  ],
   "exclude": ["node_modules", "**/*.test*"]
 }

@@ -8,7 +8,10 @@ const createJestConfig = nextJest({
 });
 
 const customJestConfig: JestConfigWithTsJest = {
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+  setupFilesAfterEnv: [
+    '<rootDir>/jest.setup.ts',
+    'react-intersection-observer/test-utils',
+  ],
   moduleDirectories: ['node_modules', '<rootDir>/src'],
   testEnvironment: 'jest-environment-jsdom',
   testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'],
@@ -17,12 +20,8 @@ const customJestConfig: JestConfigWithTsJest = {
   },
   collectCoverageFrom: [
     'src/**/*.ts(x)?',
-    '!**/services/**/*.ts',
-    '!src/management-app-trainings.tsx',
     '!src/**/*.d.ts',
-    '!src/**/mock.ts',
     '!src/**/types.ts',
-    '!src/config/api.ts',
   ],
 };
 
@@ -35,7 +34,7 @@ module.exports = createJestConfig({
   globals: {
     'ts-jest': {
       isolatedModules: false,
-      tsConfig: './tsconfig.jest.json'
+      tsConfig: './tsconfig.jest.json',
     },
   },
   ...customJestConfig,

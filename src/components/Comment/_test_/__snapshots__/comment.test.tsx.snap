@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Comment shoul be render correclty 1`] = `
+<div
+  class="sc-6cb4a93d-0 lbOngi"
+>
+  <div
+    class="sc-6cb4a93d-1 dTmgWS"
+  >
+    <div
+      class="sc-6cb4a93d-2 jCtMVJ"
+    >
+      <button
+        class="sc-6cb4a93d-3 hPtlRA"
+        data-testid="plus"
+        type="button"
+      >
+        <img
+          alt="Image user"
+          data-nimg="1"
+          decoding="async"
+          height="10"
+          loading="lazy"
+          src="/images/icon-plus.svg"
+          srcset="/images/icon-plus.svg 1x, /images/icon-plus.svg 2x"
+          style="color: transparent;"
+          width="10"
+        />
+      </button>
+      <p
+        class="sc-6cb4a93d-4 eAZISG"
+        data-testid="score"
+      >
+        12
+      </p>
+      <button
+        class="sc-6cb4a93d-3 hPtlRA"
+        type="button"
+      >
+        <img
+          alt="Image user"
+          data-nimg="1"
+          decoding="async"
+          height="4"
+          loading="lazy"
+          src="/images/icon-minus.svg"
+          srcset="/images/icon-minus.svg 1x, /images/icon-minus.svg 2x"
+          style="color: transparent;"
+          width="10"
+        />
+      </button>
+    </div>
+    <div
+      class="sc-6cb4a93d-7 kPUArE"
+    >
+      <header
+        class="sc-6cb4a93d-5 iQJxJy"
+      >
+        <div
+          class="sc-6cb4a93d-6 czGoQ"
+        >
+          <img
+            alt="Image user"
+            data-nimg="1"
+            decoding="async"
+            height="35"
+            loading="lazy"
+            src="/_next/image?url=%2Fimages%2Favatars%2Fimage-amyrobson.webp&w=96&q=75"
+            srcset="/_next/image?url=%2Fimages%2Favatars%2Fimage-amyrobson.webp&w=48&q=75 1x, /_next/image?url=%2Fimages%2Favatars%2Fimage-amyrobson.webp&w=96&q=75 2x"
+            style="color: transparent;"
+            width="35"
+          />
+          <p>
+            amyrobson
+          </p>
+          <span
+            class="createdAt"
+          >
+            1 month ago
+          </span>
+        </div>
+        <button
+          class="sc-6cb4a93d-8 bXMiLt"
+          type="button"
+        >
+          Reply
+        </button>
+      </header>
+      <p
+        class="sc-6cb4a93d-9 ciSgaB"
+      >
+        Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.
+      </p>
+    </div>
+  </div>
+  <div
+    class="sc-6cb4a93d-10 bpDzrg"
+    data-testid="reply"
+  />
+</div>
+`;
