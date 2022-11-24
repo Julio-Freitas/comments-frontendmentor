@@ -24,7 +24,6 @@ const commmentProps: Comment = {
 };
 const handleClickMock = jest.fn();
 
-
 const renderWithProviders = (children: React.ReactNode) => {
   return render(
     <ThemeProvider theme={Theme}>
@@ -100,7 +99,6 @@ describe('<Comment', () => {
     });
     const buttonScore = screen.getByTestId('plus');
 
-
     await waitFor(() => userEvent.click(buttonScore));
 
     expect(handleClickMock).toBeCalledTimes(1);
@@ -109,6 +107,5 @@ describe('<Comment', () => {
       id: 501,
       type: 'comment',
     });
-
   });
 });
