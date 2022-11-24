@@ -1,11 +1,10 @@
-
-name: "CI (Integração Continua)"
+name: 'CI (Integração Continua)'
 
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   # Ativa esse fluxo de trabalho para cada push ou pull que aconetcer apontando para a branch "main"
   push:
-    branches: [ "main" ]
+    branches: ['main', 'develop']
   pull_request:
     types: [opened, synchronize]
 
@@ -18,3 +17,13 @@ jobs:
         run: yarn install
       - name: Run Linter
         run: yarn lint
+
+  test:
+    needs: linter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Installation
+        run: yarn install
+      - name: Run Test
+        run: yarn test
