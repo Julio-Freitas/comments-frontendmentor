@@ -6,14 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint && yarn format",
+    "lint": "next lint  --fix && yarn format",
     "test": "jest",
     "test:w": "jest --watch",
     "lint:css": "stylelint './src/**/*.ts'",
     "prettier:check": "npx prettier --check .",
     "format": "prettier --write .",
     "prepare": "husky install",
-    "commit": "cz"
+    "commit": "cz",
+    "deploy": " "
   },
   "dependencies": {
     "@types/node": "18.11.9",
