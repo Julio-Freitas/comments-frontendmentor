@@ -1,91 +1,59 @@
-import { Comment } from 'context/comments/types';
-
-import Image from 'next/image';
 import { useState } from 'react';
+import CommentChild from './commentChild';
+
+import { CommentProps, CreateReply } from './type';
+
 import * as Style from './style';
-
-type HandleClickStore = {
-  action: 'plus' | 'minus';
-  type: 'comment' | 'reply';
-  id: number;
-  commentId?: number | null;
-};
-interface CommentPropsChild extends Omit<Comment, 'replies'> {
-  _handleCLick: (type: 'plus' | 'minus') => void;
-}
-interface CommentProps extends Comment {
-  _handleCLickScore: (props: HandleClickStore) => void;
-}
-
 
 const Comment = ({
   replies,
   _handleCLickScore,
   ...propsFather
 }: CommentProps) => {
-  const [reply, setReply] = useState(false)
-  const CommentChild = (props: CommentPropsChild) => (
-    <Style.Container>
-      <Style.Score>
-        <Style.IconButton
-          type="button"
-          onClick={() => props._handleCLick('plus')}
-          data-testid="plus"
-        >
-          <Image
-            src="/images/icon-plus.svg"
-            alt="Image user"
-            width={10}
-            height={10}
-          />
-        </Style.IconButton>
-        <Style.ScoreValue data-testid="score">{props.score}</Style.ScoreValue>
-        <Style.IconButton
-          type="button"
-          onClick={() => props._handleCLick('minus')}
-        >
-          <Image
-            src="/images/icon-minus.svg"
-            alt="Image user"
-            width={10}
-            height={4}
-          />
-        </Style.IconButton>
-      </Style.Score>
-      <Style.Content>
-        <Style.Header>
-          <Style.Info>
-            <Image
-              src={props.user?.image.webp}
-              alt="Image user"
-              width={35}
-              height={35}
-            />
-            <p>{props.user.username}</p>
-            <span className="createdAt">{props.createdAt}</span>
-          </Style.Info>
-          <Style.ActionReply type="button" onClick={()=> setReply(true)}>Reply</Style.ActionReply>
-        </Style.Header>
-        <Style.Description>{props.content}</Style.Description>
-      </Style.Content>
+  const [currentReply, setCurrentReply] = useState<CreateReply>();
+  const [replyValue, setReplyValue] = useState({
+    comment: '',
+    reply: '',
+    id: 0,
+  });
 
-    </Style.Container>
-  );
+  const handleReply = (value?: string, type?: 'comment' | 'reply') => {
+    setReplyValue({
+      id: propsFather.id,
+      reply: type === 'reply' && value ? value : '',
+      comment: type === 'comment' && value ? value : '',
+    });
+  };
 
   return (
     <Style.WrapperComment>
-
       <CommentChild
+        type="comment"
         {...propsFather}
         _handleCLick={(action) =>
           _handleCLickScore({ action, type: 'comment', id: propsFather.id })
         }
+        reply={
+          currentReply?.type === 'comment' && currentReply.id === propsFather.id
+        }
+        onReply={(value) => {
+          setCurrentReply({
+            id: value.id,
+            type: value.type,
+          });
+        }}
+        onSendeply={() => {
+          console.log(currentReply);
+        }}
+        textReply={replyValue.comment}
+        onChangeTextReply={(value) => handleReply(value, 'comment')}
       />
-            {reply &&  <textarea></textarea>}
+
       <Style.ContainerReplys data-testid="reply">
         {replies?.map((replie) => (
           <CommentChild
-            key={'child'}
+            type="reply"
+            key={`child-${replie.id}-${propsFather.id}`}
             {...replie}
             _handleCLick={(action) =>
               _handleCLickScore({
@@ -95,10 +63,23 @@ const Comment = ({
                 commentId: propsFather.id,
               })
             }
+            reply={
+              currentReply?.type === 'reply' && replie.id === currentReply.id
+            }
+            onReply={(value) => {
+              setCurrentReply({
+                id: value.id,
+                type: value.type,
+              });
+            }}
+            onSendeply={() => {
+              console.log(currentReply);
+            }}
+            textReply={replyValue.reply}
+            onChangeTextReply={(value) => handleReply(value, 'reply')}
           />
         ))}
       </Style.ContainerReplys>
-
     </Style.WrapperComment>
   );
 };

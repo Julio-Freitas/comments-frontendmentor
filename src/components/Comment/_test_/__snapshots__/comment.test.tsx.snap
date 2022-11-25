@@ -2,16 +2,16 @@
 
 exports[`<Comment shoul be render correclty 1`] = `
 <div
-  class="sc-6cb4a93d-0 lbOngi"
+  class="sc-4cc7a831-0 gbxJtS"
 >
   <div
-    class="sc-6cb4a93d-1 dTmgWS"
+    class="sc-4cc7a831-1 hevCLT"
   >
     <div
-      class="sc-6cb4a93d-2 jCtMVJ"
+      class="sc-4cc7a831-2 jxAsaB"
     >
       <button
-        class="sc-6cb4a93d-3 hPtlRA"
+        class="sc-4cc7a831-3 cExIDm"
         data-testid="plus"
         type="button"
       >
@@ -28,13 +28,13 @@ exports[`<Comment shoul be render correclty 1`] = `
         />
       </button>
       <p
-        class="sc-6cb4a93d-4 eAZISG"
+        class="sc-4cc7a831-4 iutNsS"
         data-testid="score"
       >
         12
       </p>
       <button
-        class="sc-6cb4a93d-3 hPtlRA"
+        class="sc-4cc7a831-3 cExIDm"
         type="button"
       >
         <img
@@ -51,13 +51,13 @@ exports[`<Comment shoul be render correclty 1`] = `
       </button>
     </div>
     <div
-      class="sc-6cb4a93d-7 kPUArE"
+      class="sc-4cc7a831-7 gDUcGA"
     >
       <header
-        class="sc-6cb4a93d-5 iQJxJy"
+        class="sc-4cc7a831-5 hmBqGq"
       >
         <div
-          class="sc-6cb4a93d-6 czGoQ"
+          class="sc-4cc7a831-6 cQyOUm"
         >
           <img
             alt="Image user"
@@ -80,21 +80,21 @@ exports[`<Comment shoul be render correclty 1`] = `
           </span>
         </div>
         <button
-          class="sc-6cb4a93d-8 bXMiLt"
+          class="sc-4cc7a831-8 jWNuRH"
           type="button"
         >
           Reply
         </button>
       </header>
       <p
-        class="sc-6cb4a93d-9 ciSgaB"
+        class="sc-4cc7a831-9 cAMEJv"
       >
         Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.
       </p>
     </div>
   </div>
   <div
-    class="sc-6cb4a93d-10 bpDzrg"
+    class="sc-4cc7a831-10 dFhxZq"
     data-testid="reply"
   />
 </div>

@@ -4,6 +4,7 @@ import Head from 'next/head';
 
 export default function Home() {
   const { comments, changeScoreComment } = useComments();
+
   return (
     <div>
       <Head>
@@ -12,7 +13,7 @@ export default function Home() {
       </Head>
 
       <main>
- =
+        =
         {comments.map((comment, index) => (
           <Comment
             key={index + 'comments'}
